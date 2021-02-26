@@ -1,0 +1,98 @@
+.root{
+    width: 47px;
+    background: #fff;
+    border: 1px solid #C9C9C9;
+    position: fixed;
+    right: -1px;
+    top: 190px;
+    z-index: 1000;   
+}
+
+.root span{
+    background: #2ebbcd;
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    width: 100%;
+    padding: 2px;
+    position: relative;
+    z-index: 10;
+    float: left;
+    cursor: pointer;
+}
+
+.root ul{
+    width: 100%;
+    margin: 10px 0 0 12px;
+}
+.facebook{
+    background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/social-share-icons.png") no-repeat;
+    background-position: 0 0;
+    background-size: 53px;
+    margin-top: 25px !important;
+}
+.twitter{
+    background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/social-share-icons.png") no-repeat;
+    background-position: 0 -31px;
+    background-size: 53px;
+}
+.pinterest{
+    background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/social-share-icons.png") no-repeat;
+    background-position: 0 -58px;
+    background-size: 51px;
+}
+.email{
+    background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/social-share-icons.png") no-repeat;
+    background-position: 0 -85px;
+    background-size: 50px;
+    margin-bottom: 10px !important;
+}
+.root ul li a{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.facebook:hover{
+    background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/social-share-icons.png") no-repeat;
+    background-position: -32px 0;
+    background-size: 53px;
+}
+.twitter:hover{
+    background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/social-share-icons.png") no-repeat;
+    background-position: -32px -31px;
+    background-size: 53px;
+}
+.pinterest:hover{
+    background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/social-share-icons.png") no-repeat;
+    background-position: -32px -58px;
+    background-size: 51px;
+}
+.email:hover{
+    background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/social-share-icons.png") no-repeat;
+    background-position: -29.5px -85px;
+    background-size: 50px;
+    
+}
+
+
+@media screen and (max-width:758px){
+     .root{
+        width: 47px;
+        background: #fff;
+        border: 1px solid #C9C9C9;
+        position: fixed;
+        right: -1px;
+        bottom: 0;
+        top:auto;
+        z-index: 10000;   
+     }
+     .root span{
+        padding: 10px 2px;
+    }
+    .facebook{
+      margin-top: 27px !important;
+    }
+}

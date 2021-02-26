@@ -1,0 +1,345 @@
+.root {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  min-height: 134px;
+  width: 100%;
+  border-bottom: 1px solid #e0e0e0;
+}
+.wrapper {
+  margin: 0px 187px;
+  padding: 0px 30px;
+}
+.grid_item {
+  display: flex;
+}
+.grid_item_1 {
+  width: 40%;
+  padding-left: 30px;
+}
+.top_margin {
+  margin-top: 87px;
+}
+.link ul,
+.grid_item_3_bottom ul,
+.hoverData_wrapper ul {
+  display: flex;
+}
+.link ul li {
+  padding-right: 30px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+.link ul li:hover a {
+  color: #39bccd;
+}
+.grid_item_1 a {
+  margin: 0 0 0 0;
+  font-family: "Kanit", sans-serif IM !important;
+  line-height: 1.4;
+  font-size: 18px;
+  color: #2d2d2d;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+@media only screen and (min-width: 769px) {
+  .grid_item_1 {
+    width: 40%;
+  }
+  .grid_item_3 {
+    width: 40%;
+  }
+}
+
+.grid_item_2 {
+  width: 20%;
+  min-height: 134px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.grid_item_2_wrapper {
+  position: relative;
+  width: 185px;
+  top: 11px;
+}
+.grid_item_2_wrapper a {
+  max-width: 450px;
+}
+.grid_item_2_wrapper a img {
+  width: 185px;
+  height: 136px;
+  position: absolute;
+  z-index: 99;
+}
+
+.grid_item_3 {
+  width: 40%;
+  padding-left: 30px;
+}
+.top {
+  width: 100%;
+  background: #f4355a;
+  display: none;
+}
+.top a {
+  color: #fff;
+}
+
+.grid_item_3_top {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.grid_item_3_bottom ul {
+  margin-top: 20px;
+  float: right;
+}
+
+.grid_item_3_bottom ul li a {
+  font-size: 14px;
+  margin-left: 10px;
+  color: #000;
+}
+.grid_item_3_bottom ul li a:hover {
+  color: #39bccd;
+}
+.grid_item_3_bottom ul li:nth-child(1)::before {
+  background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/joinmail-blue.png")
+    0 0 no-repeat;
+  display: inline-block;
+  content: "";
+  width: 17px;
+  height: 11px;
+  margin-right: -7px !important;
+  background-size: 100%;
+  top: 1px;
+}
+
+.grid_item_3_bottom ul li:nth-child(4) {
+  color: #39bccd;
+}
+.freeinfo {
+  background: #f4355a;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 26px 0px 12px;
+  height: 35px;
+  display: block;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  position: relative;
+  transition: background 0.5s ease-in-out;
+}
+.freeinfo::after {
+  background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/header-promo-arrow.png")
+    no-repeat;
+  content: "";
+  width: 7px;
+  height: 11px;
+  background-size: 88%;
+  display: inline-block;
+  margin-left: 10px;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+
+.freeinfo:hover {
+  background-color: #f2923c;
+}
+
+@media screen and (max-width: 1300px) {
+  .wrapper {
+    margin: 0px 100px;
+  }
+}
+@media screen and (max-width: 1156px) {
+  .top {
+    display: flex;
+    place-content: center;
+    text-align: center;
+    padding: 12px 0px;
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+  }
+  .grid_item_2_wrapper {
+    margin-left: -10px;
+  }
+  .grid_item_3_bottom ul li:nth-child(1) {
+    display: none;
+  }
+  .grid_item_3_bottom ul {
+    margin-top: 0px;
+  }
+  .grid_item_3_top {
+    display: none;
+  }
+  .wrapper {
+    margin: 0px 30px !important;
+    padding: 0px;
+  }
+  .hoverData {
+    top: 175px !important;
+  }
+}
+@media screen and (max-width: 770px) {
+  .grid_item_2_wrapper a img {
+    width: 120px;
+    height: 100px;
+  }
+
+  .wrapper {
+    padding: 0px 10px;
+    margin: 0px 10px;
+  }
+  .top_margin {
+    margin-top: 30px;
+  }
+  .root {
+    height: 130px !important;
+  }
+  .hoverData {
+    top: 133px !important;
+  }
+}
+
+.searchIcon:hover {
+  background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/search-icon-hvr.png")
+    0 0 no-repeat;
+  background-size: 100%;
+}
+
+.searchIcon {
+  width: 15px;
+  height: 16px;
+  background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/search-icon-blue.png")
+    0 0 no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+}
+.cartIcon:hover {
+  background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/cart-icon-hvr.png")
+    0 0 no-repeat;
+  background-size: 100%;
+}
+.cartIcon {
+  position: relative;
+  width: 15px;
+  height: 16px;
+  background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/cart-icon-blue.png")
+    0 0 no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  margin: 5px 0 0;
+  top: -3px;
+}
+
+.menuIcon::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 11px;
+  background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/menu-icon.png")
+    top left no-repeat;
+  background-size: 100%;
+  margin-right: 8px;
+  position: relative;
+  top: 0px;
+}
+.hoverData {
+  background: #2ebbcd
+    url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/nav-overlay.png")
+    0 0 repeat-x;
+  display: flex;
+  min-height: 75px;
+  position: absolute;
+  left: 0;
+  top: 133px;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+}
+.hoverData_wrapper {
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+}
+
+.hoverData_wrapper ul li a {
+  color: #fff !important;
+  padding: 30px 12px 26px 12px !important;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  margin: 0;
+  letter-spacing: 1px;
+  font-family: "Mukta", sans-serif;
+}
+.hoverData_wrapper ul li a:hover {
+  background-color: #29a2b3 !important;
+}
+
+.menuIcon {
+  font-weight: 900;
+}
+.menuIcon:hover {
+  color: #000 !important;
+}
+.menu_hover {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.menu_hover ul li a {
+  width: 100%;
+  border-bottom: 1px solid #3fc2d3;
+  float: left;
+  clear: both;
+  text-align: left !important;
+  padding: 10px 0px !important;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  margin: 0 auto;
+  margin-left: 60px;
+  letter-spacing: 1px;
+  font-family: "Mukta", sans-serif;
+}
+
+@media screen and (max-width: 750px) {
+  .grid_item_3_bottom ul li:nth-child(2),
+  .grid_item_3_bottom ul li:nth-child(3) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .grid_item_1,.grid_item_3 {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+  .grid_item_2_wrapper {
+    margin-left: -25px !important;
+  }
+  .wrapper {
+    margin: 0px 2px !important;
+    padding: 0px;
+  }
+  
+}

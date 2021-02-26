@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Raleway:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Raleway:wght@800&family=Signika:wght@700&display=swap');
+*{
+    box-sizing: border-box;
+}
+.root {
+  background-image: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/home_page_slider_5.jpg");
+  height: 590px;
+  position: relative;
+  border-bottom: 10px solid white;
+  font-weight: 800;
+  font-style: normal;
+  color: #fff;
+  background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+.content_wrapper {
+  display: grid;
+  place-items: center;
+  margin: 0px 180px;
+}
+.content {
+  margin-top: 5%;
+  width: 280px;
+  font-family: 'Signika', sans-serif;
+}
+.bigtext_line0 {
+  line-height: 1em;
+  font-size: 59.5px;
+  white-space: nowrap;
+  display: block;
+}
+.bigtext_line1 {
+  line-height: 1em;
+  font-size: 41.1px;
+  word-spacing: 0.9px;
+  display: block;
+}
+.script_lines {
+  line-height: 1em;
+  font-size: 41.9px;
+  display: block;
+}
+.bigtext_line3 {
+  line-height: 1em;
+  font-size: 30.7px;
+  display: block;
+}
+.bigtext_line4 {
+  line-height: 1em;
+  font-size: 29.1px;
+  white-space: nowrap;
+  display: block;
+}
+@media screen and (max-width: 1270px) {
+    .content {
+        position: relative;
+        margin: 5% auto 0 auto;
+        margin-top:17%;
+      text-align: center;
+
+      }
+    
+  }
+@media screen and (max-width: 900px) {
+  .root {
+    background-position: cover;
+  }
+  .content {
+    margin-top:20%;
+    text-align: center;
+
+  }
+  
+}
+@media screen and (max-width: 850px) {
+    .root {
+      background-position: cover;
+    }
+    .content {
+      margin-top:23%;
+      text-align: center;
+    }
+    
+  }
+  @media screen and (max-width: 758px)
+  {   .root {
+      height: 468px;
+      }
+      .content {
+          margin-top:26%;
+          text-align: center;
+        }
+  } 
+  
+@media screen and (max-width:667px){
+    .content {
+        margin-top:25%;
+        text-align: center;
+      }
+      .content_wrapper {
+        margin: 0px;
+      }
+      .content_wrapper {
+        padding: 0 10px;
+        text-align: center;
+      }
+      .bigtext_line0 {
+        font-size: 45.5px;
+      }
+      .bigtext_line1 {
+        font-size: 40.1px;
+      }
+      .script_lines {
+        font-size: 34.9px;
+      }
+      .bigtext_line3 {
+        font-size: 24.7px;
+      }
+      .bigtext_line4 {
+        font-size: 21.1px;
+      }
+}
+@media screen and (max-width: 650px) {
+    .content_wrapper {
+      padding: 0 30px;
+    }
+    .bigtext_line0 {
+      font-size: 50.5px;
+    }
+    .bigtext_line1 {
+      font-size: 45.1px;
+    }
+    .script_lines {
+      font-size: 39.9px;
+    }
+    .bigtext_line3 {
+      font-size: 28.7px;
+    }
+    .bigtext_line4 {
+      font-size: 27.1px;
+    }
+  }
+
+
+@media screen and (max-width:320px){
+    .root {
+        height: 400px;
+        }
+    .content_wrapper {
+      padding: 0px;
+      
+    }
+    .bigtext_line0 {
+      font-size: 40.5px;
+    }
+    .bigtext_line1 {
+      font-size: 35.1px;
+    }
+    .script_lines {
+      font-size: 30.9px;
+    }
+    .bigtext_line3 {
+      font-size: 20.7px;
+    }
+    .bigtext_line4 {
+      font-size: 16.1px;
+    }
+}

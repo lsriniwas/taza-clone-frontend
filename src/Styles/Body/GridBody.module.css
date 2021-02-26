@@ -1,0 +1,212 @@
+.root{
+}
+
+.lower{
+    display: flex;
+    flex-direction: row;
+}
+
+.lower_left{
+    background-color: #39BCCD;
+    color: #fff;
+    border-right: 5px solid #fff;
+    min-height: 310px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+}
+.content_box{
+    margin:0px 122px;
+}
+.content_box h3{
+    display: block;
+    font-family:Helvetica,Arial,sans-serif;
+    font-weight: 800;
+    margin: 0 0 0.5em;
+    line-height: 1.1;
+    font-size: 28px;
+}
+.content_box a{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 14px;
+    color: #fff;
+    padding: 10px 20px;
+    float: left;
+    border: 1px solid #fff;
+}
+.content_box p{
+    font-size: 15px;
+    color: #DBFBFF;
+    font-family:  sans-serif;
+    margin-bottom: 20px;
+}
+
+.content_box a:hover{
+    color: #39BCCD;
+    background-color: #fff;
+
+}
+
+.lower_right{
+    background-image: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/home_page_feature_module_2.jpg");
+    border-left: 5px solid #fff;
+    min-height: 310px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    width: 50%;
+
+}
+
+.upper{
+    display: flex;
+}
+.upper a{
+    position: relative;
+}
+.upper a:nth-child(1){
+    background-image: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/home_page_shop_module_1.jpg");
+    background-size: cover;
+    background-position: center center;    
+    border-bottom: 10px solid #fff;
+    border-top: 10px solid #fff;
+    min-height: 310px;
+    border-right: 5px solid #fff;
+    align-items: center;
+}
+.upper a:nth-child(2){
+    background-image: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/home_page_shop_module_2.jpg");
+    background-size: cover;
+    background-position: center center;    
+    border-bottom: 10px solid #fff;
+    min-height: 310px;border-top: 10px solid #fff;
+    border-left: 5px solid #fff;
+    border-right: 5px solid #fff;
+        align-items: center;
+}
+
+.upper a:nth-child(3){
+    background-image: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/home_page_shop_module_3.jpg");
+    background-size: cover;
+    background-position: center center;    
+    border-bottom: 10px solid #fff;
+    min-height: 310px;border-top: 10px solid #fff;
+    border-left: 5px solid #fff;
+    align-items: center;
+}
+.upper a{
+    width: 33.333%;
+    display: grid;
+    place-items: center;
+}
+
+.upper_inner_wrapper{
+    position: relative;
+    z-index: 60;
+    margin: 10px;
+}
+.title{
+    width: 100%;
+    display: flex; 
+    flex-direction: row; 
+    position: absolute;
+    place-items: center;
+    font-size: 24px;
+    font-family: 'Playball', cursive;
+    font-family: 'Volkhov', serif;
+    top:-14.5px;
+    color:#fff;
+    z-index: 999;
+    text-align: center;
+}
+.title::after{
+    border-bottom: 2px solid white;
+    content: '';
+    margin-left: 15px;
+    flex: 1; 
+}
+.title::before{
+    border-bottom: 2px solid white;
+    content: '';
+    margin-right: 15px;
+    flex: 1 ; 
+}
+.inner_content{
+    border: 2px solid #fff;
+    text-align: center;
+    border-top: 0px;
+    padding: 20px 30px 10px 30px;
+}
+
+.inner_content > h2{
+    display: block;
+    font-family: 'Roboto Slab', serif;
+    font-size: 35px;
+    word-spacing:6px;
+    line-height: 1.4;
+    color: #fff;
+}
+.smooth_hover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: none;
+    z-index: 20;
+    top: 0;
+    left: 0;
+}
+.smooth_hover:hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: RGBA(243, 146, 52, 0.8);
+    z-index: 20;
+    top: 0;
+    left: 0;
+    transition: background-color 0.5s ease;
+}
+@media screen and (max-width:1018px){
+    .upper{
+        flex-direction: column;
+    }
+    .upper a:nth-child(1),a:nth-child(2),a:nth-child(3){
+        width: 100%;
+        margin:0px;
+        border:0px !important;
+        border-top:3px solid #fff !important;
+        display: grid;
+        place-items: center;
+    }
+    .upper a:nth-child(3){
+        border-bottom:10px solid #fff !important;
+    }
+
+}
+@media screen and (max-width:770px){
+    .lower{
+        flex-direction: column-reverse;
+    }
+    .content_box{
+        margin:0px 122px;;
+    }
+    .upper a:nth-child(3){
+        border-bottom:0px solid #fff !important;
+    }
+    .lower_left,.lower_right{
+        width: 100%;
+        margin:0px;
+        border:0px;
+        border-top:1px solid #fff;
+    }
+    
+}
+@media screen and (max-width:470px){
+    .content_box{
+        margin:0px 20px;
+    }
+}

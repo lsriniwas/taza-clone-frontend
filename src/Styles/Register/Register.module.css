@@ -1,0 +1,70 @@
+.root{
+    
+}
+
+.header{
+    height: 157px;
+    background: #2ebbcd;
+    border-bottom: 8px solid #fff;
+    text-align: center;
+    color: #fff;
+    margin-top: 0;
+    font-size: 32px;
+    text-align: center;
+    display: flex;
+    place-content: center;
+}
+
+.title{
+    margin:auto 0px;
+}
+.label{
+ font-weight: 900;
+ color:#F2923C;
+ margin:7px 0px 4px 0px;
+}
+.input input{
+    width: 100%;
+    border: 1px solid #3AB4C7;
+    border-bottom: 3px solid #3AB4C7;
+    background:#fff;
+    padding: 10px;
+    font-size: 16px;
+}
+.input textarea{
+    width: 100%;
+    border: 1px solid #3AB4C7;
+    border-bottom: 3px solid #3AB4C7;
+    background:#fff;
+    padding: 10px;
+    min-inline-size: 1px;
+    font-size: 16px;
+}
+.formButton{
+    background:#3AB4C7;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    border:none;
+    color: #fff;
+    margin: 10px 0px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.formData{
+    display: grid;
+    place-items: center;
+}
+
+.formData form{
+    max-width: 500px;
+}
+
+@media screen and (max-width:667px){
+    
+.header h1{
+    font-size: 50px;
+    text-align: center;
+}
+}

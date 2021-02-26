@@ -1,0 +1,117 @@
+.root{
+    width: 100%;
+}
+
+.title_img{
+    background-image: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/page_banner_6_image.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 320px;
+    margin-bottom: 9px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.title_img h1{
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.info{
+    margin-top: 30px;
+    font-size: 17px;
+    text-align: center;
+    padding: 0 14%;
+    font-family: sans-serif;
+}
+.body_wrapper{
+    max-width: 1160px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.bar_name{
+    color: #f2923c;
+    text-align: center; 
+}
+.bar_name ~ p{
+    text-align: center;
+}
+.newproduct{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/new-corner.png") top right no-repeat;
+    background-size: 100%;
+}
+.buy_button{
+    background:#2ebbcd;
+    color:white;
+    padding:10px 20px;
+    outline:none;
+    border:none;
+    font-size:14px;
+    border-radius: 5px;
+    cursor: pointer;  align-items: center;
+    text-align: center;
+    font-weight:500; 
+    font-family: 'NexaBlack', Helvetica, Arial, sans-serif;;
+}
+.buy_button:hover{
+    background:#f2923c;
+}
+.buy_button{
+    margin-top: 10px !important;
+}
+.bar_name div{
+    color:#f2923c;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 769px){
+.grid_data {
+    grid-template-columns: 33.333% 33.333% 33.333%;
+}
+div {
+    display: block;
+}
+   
+}
+
+@media screen and (max-width:770px){
+    .title_img{
+        background-image: none;
+        height: 120px;
+        margin-bottom: 9px;
+        display: grid;
+        place-items: center;
+    }
+    .title_img h1{
+        color:#000;
+    }
+}
+
+.img_div{
+    width: 100%;   
+    height:auto
+}
+
+.img_div div img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block; 
+    cursor: pointer;
+}
