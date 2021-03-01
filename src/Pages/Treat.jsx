@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { fetchCollectionBars, getProductDetails } from '../Redux/Collections/actions'
+import { fetchCollectionTreats, getProductDetails } from '../Redux/Collections/actions'
 import { useDispatch, useSelector } from "react-redux";
 import styles from "../Styles/BarPage/BarPage.module.css"
 import "../Styles/BarPage/BarPage.module.css"
 import {Grid, Typography } from '@material-ui/core';
 import {  useHistory } from 'react-router-dom';
-export const BarPage = () => {
+export const Treat = () => {
     const dispatch = useDispatch()
     const bars = useSelector(state => state.collectionsBarReducer.bars)
     const loading = useSelector(state => state.collectionsBarReducer.isLoading)
@@ -17,14 +17,14 @@ export const BarPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
         document.title = `Bars —Taza Chocolate`
-        dispatch(fetchCollectionBars())
+        dispatch(fetchCollectionTreats())
     }, [])
     const handleProduct=(product)=>{
         const data={
             pathname:'/collections/product',
             search: `?${product._id}`,
             state:{
-                url:'amaze-bars'
+                url:'chocolate-covered-nuts'
             }
         }
         history.push(data)
@@ -37,7 +37,7 @@ export const BarPage = () => {
             <div className={styles.title_img}
             
             style={{
-                backgroundImage: 'url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/page_banner_6_image.jpg")',
+                backgroundImage: 'url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/page_banner_1_image.jpg")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center center',
                 backgroundRepeat: 'no-repeat',
@@ -47,17 +47,17 @@ export const BarPage = () => {
                 display: 'grid',
                 placeItems: 'center',
             }}
-            
             >
                 <div>
-                    <h1>bars</h1>
+                    <h1>CHOCOLATE COVERED TREATS</h1>
                 </div>
             </div>
             <div className={styles.info}>
                 <div>
-                    <span>Our Chocolate Bars take stone ground chocolate to another dimension by mixing incredible flavor combinations into our minimally processed, bold chocolate.</span>
+                    <span>Freshly roasted almonds, cashews, hazelnuts, and more drenched in stone ground dark chocolate.</span>
                 </div>
             </div>
+            <br/>
             <div className={styles.body_wrapper}>
                 <div>
                     <Grid container  justify="flex-start"  >
@@ -81,7 +81,7 @@ export const BarPage = () => {
                                         </p>
                                         <p>
                                         <span title="Buy">
-                                            <button className={styles.buy_button}  onClick={()=>handleProduct(bar)}  >
+                                            <button className={styles.buy_button}  onClick={()=>handleProduct(bar)} >
                                                 BUY
                                             </button>
                                         </span>

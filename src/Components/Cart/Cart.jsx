@@ -17,7 +17,6 @@ export const Cart = () => {
     const [qty, setQty] = React.useState();
 
     React.useEffect(() => {
-        window.scrollTo(0, 0)
         document.title = `User Cart |Taza Chocolate `
     }, [])
 

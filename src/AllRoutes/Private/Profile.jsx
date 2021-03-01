@@ -1,7 +1,7 @@
 import { Divider, Fade, makeStyles, Modal, Paper } from '@material-ui/core'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { userLogout } from '../../Redux/isAuth/actions'
+import { getUserProfile, userLogout } from '../../Redux/isAuth/actions'
 import "../../Styles/Profile/Profile.module.css"
 import styles from "../../Styles/Profile/Profile.module.css"
 import Accordion from '@material-ui/core/Accordion';
@@ -9,6 +9,8 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { requestUserOrder } from '../../Redux/Cart_and_Orders/actions'
+
 const useStyles = makeStyles(() => ({
     modal: {
         display: 'flex',
@@ -24,6 +26,7 @@ export const Profile = () => {
     const dispatch = useDispatch();
     const profile = useSelector(state => state.authReducer.profile)
     const addresses = useSelector(state => state.authReducer.profile.addresses)
+    const orders = useSelector(state => state.cartorderReducer.user_ordered_items)
     const handleOpen = () => {
         setOpen(true);
     }
@@ -31,7 +34,13 @@ export const Profile = () => {
         setOpen(false);
     }
     React.useEffect(() => {
+
+        dispatch(getUserProfile())
         document.title = `User Profile |Taza Chocolate `
+        const payload = {
+            id: profile._id
+        }
+        dispatch(requestUserOrder(payload))
     }, [])
 
     const handleLogout = () => {
@@ -45,11 +54,50 @@ export const Profile = () => {
                 </div>
             </div>
             <div className={styles.profile_wrapper}>
-                <div>
+                <div className={styles.orders} >
                     <h1>ORDERS HISTORY</h1>
-                    <p>You haven't placed any orders yet.</p>
+                    {orders.length !== 0 ?
+                        <div className={styles.orders_list}>
+                            {orders?.map(order =>
+                                <div>
+                                    <div>
+                                        Date:{order.date}
+                                        {
+                                            order.items?.map(item => {
+                                                return (
+                                                    <div className={styles.item}>
+                                                        <div className={styles.item_checkout} >
+                                                            <div className={styles.item_checkout_img}>
+                                                                <img src={item.img} alt="" />
+                                                            </div>
+                                                        </div>
+                                                        <span style={{ fontSize: '10px', marginLeft: '5px' }}>
+                                                            {item.name}
+                                                        </span>
+                                                        <div>
+                                                            {item.qty}
+                                                        </div>
+                                                        <div>
+                                                            ${(item.qty * item.price).toFixed(2)}`
+                                                        </div>
+                                                  </div>
+                                                )
+                                            })
+                                        }
+
+
+                                    </div>
+                                    <p>Delivered Address:{}</p>
+                                </div>
+                            )
+                            }
+
+                        </div>
+                        :
+                        <p>You haven't placed any orders yet.</p>
+                    }
                 </div>
-                <div>
+                <div className={styles.account_details}>
                     <div>
                         <h1>ACCOUNT DETAILS</h1>
                         <h4>{`${profile.first_name} ${profile.last_name}`}</h4>
@@ -68,11 +116,11 @@ export const Profile = () => {
                     </div>
                 </div>
             </div>
-            
+
             <Modal
                 className={classes.modal}
                 open={open}
-                 onClose={handleClose}
+                onClose={handleClose}
             >
                 <Fade
                     in={open}
@@ -80,7 +128,7 @@ export const Profile = () => {
                     <div>
                         {
                             addresses?.map(address =>
-                                <Paper style={{margin:20}}>
+                                <Paper style={{ margin: 20 }}>
                                     <Accordion>
                                         <AccordionSummary
                                             expandIcon={<ExpandMoreIcon />}
@@ -94,11 +142,11 @@ export const Profile = () => {
                                                 {address.phone}
                                                 <br />
                                                 {address.address}
-                                                <br/>
+                                                <br />
                                                 {address.apartment}
-                                                <br/>
+                                                <br />
                                                 {address.company}
-                                                <br/>
+                                                <br />
                                                 {address.city}
                                                 <br />
                                                 {address.state}-{address.zipcode}

@@ -85,7 +85,7 @@ export const Navbar = () => {
                     </div>
                     <div className={styles.grid_item_2}>
                         <div className={styles.grid_item_2_wrapper}>
-                            <NavLink to="#">
+                            <NavLink to="/">
                                 <img src="https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/logo.png" alt="" />
                             </NavLink>
                         </div>

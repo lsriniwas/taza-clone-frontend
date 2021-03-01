@@ -1,4 +1,6 @@
+import { loadData, saveData } from "../../Utils/localStorage";
 import {
+  FETCH_USER_PROFILE_FAILURE,
   REQUEST_USER_LOGIN,
   REQUEST_USER_LOGIN_FAILURE,
   REQUEST_USER_LOGIN_SUCCESS,
@@ -6,6 +8,7 @@ import {
   REQUEST_USER_SIGNUP_FAILURE,
   REQUEST_USER_SIGNUP_SUCCESS,
   USER_LOGOUT,
+  FETCH_USER_PROFILE,
 } from "./actionType";
 
 const initialState = {
@@ -14,10 +17,10 @@ const initialState = {
   isLoading: false,
   error: false,
   error_message: "",
+  token:loadData('token')||null
 };
 
 export const isAuthReducer = (state = initialState, { type, payload }) => {
-  console.log(payload)
   switch (type) {
     case REQUEST_USER_SIGNUP || REQUEST_USER_LOGIN:
       return {
@@ -36,9 +39,11 @@ export const isAuthReducer = (state = initialState, { type, payload }) => {
           error: false,
         };
       case REQUEST_USER_LOGIN_SUCCESS:
+       let data=payload 
+       saveData('token',data)
       return {
         ...state,
-        profile: payload,
+        token: data,
         isLoading: false,
         isAuth: true,
         error: false,
@@ -62,13 +67,35 @@ export const isAuthReducer = (state = initialState, { type, payload }) => {
       };
     }
     case USER_LOGOUT:
+    localStorage.removeItem("token");
       return {
+        token:null,
         isAuth: false,
         profile: "",
         isLoading: false,
         error: false,
         error_message: "",
       };
+case   FETCH_USER_PROFILE:{
+        return {
+          ...state,
+          profile: payload,
+          isLoading: false,
+          isAuth: true,
+          error: false,
+        }
+}
+ case FETCH_USER_PROFILE_FAILURE:{
+  localStorage.removeItem("token");
+   return {
+    ...state,
+    profile:'',
+    token: null,
+    isLoading: false,
+    isAuth: false,
+    error: false,
+  }
+ }
     default:
       return state;
   }

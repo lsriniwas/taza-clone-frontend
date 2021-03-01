@@ -38,8 +38,8 @@
     min-height: 1px;
 }
 
-h3{
-    color:#fff;
+.h3{
+    color:#fff ;
     font-family: 'Roboto Slab', serif;
     margin-bottom: 5px;
 
@@ -52,7 +52,7 @@ h3{
     font-size: 12px;
     color: #acacac;
 }
-li a:hover{
+.grid_item_list li a:hover{
     color: #fff;
 }
 .hr{

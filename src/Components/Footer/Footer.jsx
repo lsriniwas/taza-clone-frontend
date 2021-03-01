@@ -12,7 +12,7 @@ export const Footer = () => {
                     <div className={styles.footer_upper_left}>
                         <Grid container className={styles.grid_item_list}>
                             <Grid className={styles.grid_item} item sm={3} md={3} lg={3} xl={3} >
-                                <h3><NavLink to="buy.com" className={styles.buylink}>BUY</NavLink></h3>
+                                <h3 className="h3"><NavLink to="buy.com" className={styles.buylink}>BUY</NavLink></h3>
                                 <ul>
                                     <li><NavLink to="/collections/gifts-collections" title="Gifts">Gifts</NavLink></li>
                                     <li><NavLink to="/collections/dark-bark" title="Dark Bark">Dark Bark</NavLink></li>
@@ -24,7 +24,7 @@ export const Footer = () => {
                                 </ul>
                             </Grid>
                             <Grid className={styles.grid_item} item sm={3} md={3} lg={3} xl={3} >
-                                <h3>LEARN</h3>
+                                <h3 className="h3">LEARN</h3>
                                 <ul>
                                     <li><NavLink to="/pages/NavLinkbout-taza" title="About Taza">About Taza</NavLink></li>
                                     <li><NavLink to="/pages/our-process" title="Our Process">Our Process</NavLink></li>
@@ -35,14 +35,14 @@ export const Footer = () => {
                                 </ul>
                             </Grid>
                             <Grid className={styles.grid_item} item sm={3} md={3} lg={3} xl={3} >
-                                <h3>VISIT</h3>
+                                <h3 className="h3">VISIT</h3>
                                 <ul>
                                     <li><NavLink to="/pages/factory-store" title=" Our Factory Store"> Our Factory Store</NavLink></li>
                                     <li><NavLink to="/pages/tours-events" title="Tours &amp; Events">Tours &amp; Events</NavLink></li>
                                 </ul>
                             </Grid>
                             <Grid className={styles.grid_item} item sm={3} md={3} lg={3} xl={3} >
-                                <h3>More</h3>
+                                <h3 className="h3">More</h3>
                                 <ul>
                                     <li><NavLink to="/pages/contact-us" title="Contact Us">Contact Us</NavLink></li>
                                     <li><NavLink to="/pages/faqs" title="FAQs">FAQs</NavLink></li>
@@ -56,7 +56,7 @@ export const Footer = () => {
                         </Grid>
                     </div>
                     <div className={styles.footer_upper_right}>
-                        <h3>JOIN OUR MAILING LIST</h3>
+                        <h3 className="h3" style={{color:'#fff'}} >JOIN OUR MAILING LIST</h3>
                         <form action="" className={styles.form_inp}>
                             <input type="text" name="" id="" placeholder="Name" />
                             <input type="email" name="" id="" placeholder="Email" />

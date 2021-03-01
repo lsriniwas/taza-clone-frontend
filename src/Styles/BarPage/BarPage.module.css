@@ -2,17 +2,6 @@
     width: 100%;
 }
 
-.title_img{
-    background-image: url("https://cdn.shopify.com/s/files/1/0974/7668/t/8/assets/page_banner_6_image.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 320px;
-    margin-bottom: 9px;
-    position: relative;
-    display: grid;
-    place-items: center;
-}
 
 .title_img h1{
     color: #fff;

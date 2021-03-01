@@ -5,7 +5,7 @@ import Fade from '@material-ui/core/Fade';
 import { Modal } from '@material-ui/core';
 import styles from "../../Styles/Login/Login.module.css"
 import  "../../Styles/Login/Login.module.css"
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { userLogin } from '../../Redux/isAuth/actions';
 import {useSelector} from "react-redux"
@@ -47,15 +47,13 @@ export const Login = ({login,setLogin}) => {
         document.title = `Login |Taza Chocolate `
       }, [])
 
-    const handleLoginData=(e)=>{
+    const handleLoginData= (e)=>{
         e.preventDefault();
         const payload={
             email,
             password
         }
         dispatch(userLogin(payload))
-        
-       
     }
  
     React.useEffect(()=>{

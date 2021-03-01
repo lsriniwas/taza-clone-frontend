@@ -1,4 +1,4 @@
-import { Breadcrumbs, Divider,  Typography } from "@material-ui/core";
+import { Breadcrumbs, Divider,  makeStyles} from "@material-ui/core";
 import React, { useState } from "react";
 import { useHistory} from "react-router-dom"
 import { NavLink } from "react-router-dom"
@@ -6,18 +6,41 @@ import "../Styles/ProductPage/ProductPage.module.css"
 import styles from "../Styles/ProductPage/ProductPage.module.css"
 import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 import { addToCart } from '../Redux/Cart_and_Orders/actions';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductDetails } from "../Redux/Collections/actions";
+
+const useStyles=makeStyles(()=>({
+    root:{
+        padding:'15px 16%',
+        fontSize:'12px',
+    }
+    
+    
+
+}))
+
 
 export const Product = () => {
+    const classes=useStyles();
     const [qty, setQty] = useState(1);
-    const history = useHistory();
     const dispatch = useDispatch();
     const [itemAdded, setItemAdded] = useState(false)
-    const product = history.location.state;
+    const [breadCrumb,setBreadCrumb]=useState("");
+    const product = useSelector(state=>state.collectionsBarReducer.productDetails)
+    const history=useHistory(); 
     React.useEffect(() => {
         window.scrollTo(0, 0)
-        document.title = ` ${product.name} | Taza Chocolate`
-    },[])
+        const {search,state}=history.location
+        const payload={
+            _id:search.split("?")[1],
+            url:state.url
+            
+        }
+        setBreadCrumb(state.url)
+        dispatch(getProductDetails(payload))
+        document.title = ` ${product.name||'Chocolate'} | Taza Chocolate`
+
+    },[history.location,dispatch])
     const handleAddToCart = (item) => {
         const payload = {
             id: item.id,
@@ -29,31 +52,28 @@ export const Product = () => {
         dispatch(addToCart(payload, qty))
         setItemAdded(true)
 
-    //    let timer= setTimeout(() => {
-    //         setItemAdded(false)
-    //         clearTimeout(timer)
-    //     }, 2000)
-
     }
 
     return (
         <div className={styles.root}>
 
-            <Breadcrumbs separator="›" aria-label="breadcrumb">
-                <NavLink to="/" >
-                    HOME
+            <Breadcrumbs separator="›" className={classes.root}>
+                   <NavLink to="/" >
+                     HOME
                      </NavLink>
-                <NavLink to="/bars">
-                    BUY
+                    <NavLink to={`/collections/${breadCrumb}`}>
+                    {breadCrumb.toUpperCase()}
                     </NavLink>
-                <Typography color="textPrimary">BAR</Typography>
+                    <p>{product.name}</p>
             </Breadcrumbs>
             <Divider />
             <div className={styles.body}>
+                <br/>
                 <div className={styles.product_wrapper}>
                     <div className={styles.product_img}>
                         <div><img src={product.src} alt={product.alt} /></div>
                     </div>
+                   
                     <div className={styles.product_info}>
                         <h1>{product.name}</h1>
                         <div className={styles.product_desc}>

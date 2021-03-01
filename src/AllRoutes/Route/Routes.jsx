@@ -12,6 +12,9 @@ import { LearnMore } from '../../Components/LearnMore/LearnMore'
 import { Navbar } from '../../Components/Navbar/Navbar'
 import { Register } from '../../Components/Register/Register'
 import { BarPage } from '../../Pages/BarPage'
+import { Treat } from '../../Pages/Treat'
+import { Discs } from '../../Pages/Discs'
+import { Bark } from '../../Pages/Bark'
 import { Product } from '../../Pages/Product'
 import { PrivateRoute } from '../Private/PrivateRoute'
 import { Profile } from '../Private/Profile'
@@ -31,11 +34,28 @@ const Routes = () => {
                 <Route path="/collections/amaze-bars" exact>
                     <Navbar />
                     <BarPage />
-
                     <FreeShipping />
                     <LearnMore />
                 </Route>
-                <Route path="/collections/amaze-bars/product" exact>
+                <Route path="/collections/chocolate-covered-nuts" exact>
+                    <Navbar />
+                    <Treat />
+                    <FreeShipping />
+                    <LearnMore />
+                </Route>
+                <Route path="/collections/discs" exact>
+                    <Navbar />
+                    <Discs />
+                    <FreeShipping />
+                    <LearnMore />
+                </Route>
+                <Route path="/collections/dark-bark" exact>
+                    <Navbar />
+                    <Bark />
+                    <FreeShipping />
+                    <LearnMore />
+                </Route>
+                <Route path="/collections/product" exact>
                     <Navbar />
                     <Product />
                     <FreeShipping />
@@ -54,6 +74,9 @@ const Routes = () => {
                 </Route>
                 <Route path="/order" exact>
                     <Checkout />
+                </Route>
+                <Route path="/success" exact>
+                   <payment/>
                 </Route>
                 <Route path="/mail" exact>
                      <Navbar />

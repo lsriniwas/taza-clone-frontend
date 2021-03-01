@@ -1,12 +1,11 @@
-import { REQUEST_BARS, REQUEST_BARS_FAILURE, REQUEST_BARS_SUCCESS } from "./actionType";
+import { REQUEST_BARS, REQUEST_BARS_FAILURE, REQUEST_BARS_SUCCESS, REQUEST_SINGLE_PRODUCT } from "./actionType";
 
 const init={
     isLoading:false,
     bars:[],
-    error:false
+    error:false,
+    productDetails:"",
 }
-
-
 const collectionsReducer=(state=init,{type,payload})=>{
     switch(type){
         case REQUEST_BARS:{
@@ -26,6 +25,13 @@ const collectionsReducer=(state=init,{type,payload})=>{
             return{
                 ...state,
                 error:true
+            }
+        }
+        case REQUEST_SINGLE_PRODUCT:{
+            return{
+                ...state,
+                productDetails:payload,
+                isLoading:false
             }
         }
         default:{
