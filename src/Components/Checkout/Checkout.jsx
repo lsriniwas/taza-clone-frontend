@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import styles from "../../Styles/Checkout/Checkout.module.css"
 import Divider from '@material-ui/core/Divider';
 import { useDispatch, useSelector } from 'react-redux';
-import { Badge, MenuItem, Paper, Snackbar, TextField } from '@material-ui/core';
+import { Badge, MenuItem, Snackbar, TextField } from '@material-ui/core';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-import { NavLink, Redirect, useHistory } from 'react-router-dom';
+import { NavLink, Redirect} from 'react-router-dom';
 import { Alert } from '@material-ui/lab';
 import { CustomHook } from '../CustomHook/CustomHook';
 import { addOrder } from '../../Redux/Cart_and_Orders/actions';
-import axios from 'axios';
+// import axios from 'axios';
 
 const init = {
     first_name: "",
@@ -30,21 +30,33 @@ export const Checkout = () => {
     const [formDisplay,setFormDisplay]=useState(true)
     const [value, setValue] = CustomHook(init);
     const dispatch = useDispatch();
-    const history=useHistory()
-    let address = ""
+    // const history=useHistory()
+    // let address = ""
     const [open, setOpen] = useState(false);
     const { isAuth,  profile } = useSelector(state => state.authReducer)
     const cartItems = useSelector(state => state.cartorderReducer.cart)
     const totalAmt = useSelector(state => state.cartorderReducer.totalAmt)
-    const message = useSelector(state => state.cartorderReducer.message)
+    // const message = useSelector(state => state.cartorderReducer.message)
     const [presentAddress, setAdd] = useState("")
     React.useEffect(() => {
         window.scrollTo(0, 0)
         document.title = `Checkout |Taza Chocolate `
     },[])
-
     const handleShipping=()=>{
-        setFormDisplay(false)
+        setAdd(value)
+        let check=false
+        for(let key in presentAddress){
+            if(presentAddress[key]===""){
+                check=true;
+                break;
+            }
+        }
+        // console.log()
+        if(presentAddress!==""&&check===false){
+            setFormDisplay(false)
+        }else{
+            alert('fill all address fields')
+        }
     }
     const handlePlaceOrder=async()=>{
         const payload={
@@ -60,7 +72,7 @@ export const Checkout = () => {
          dispatch(addOrder(payload,orderItems))
         }
         const handleAddress = (value) => {
-        const temp=value.trim(" ").split("\n")
+        // const temp=value.trim(" ").split("\n")
         const payload=value.split("\n")
         let init={
             first_name:""||payload[0],
@@ -168,7 +180,14 @@ export const Checkout = () => {
                                     <div className={styles.formDisplay_label}>Ship to</div>
                                     <div>
                                          <p>
-                                        {presentAddress}
+                                             {/* Address check */}
+                                             {presentAddress.first_name},{presentAddress.last_name},
+                                                    {presentAddress.company},
+                                                    {presentAddress.apartment},
+                                                    {presentAddress.address},
+                                                    {presentAddress.city},
+                                                    {presentAddress.country},{presentAddress.state},{presentAddress.zipcode},
+                                                    {presentAddress.phone}
                                         </p> 
                                         </div>
                                </div>
@@ -181,7 +200,6 @@ export const Checkout = () => {
                                     <TextField
                                     value={value.first_name}
                                         onChange={(e) => setValue({ [e.target.name]: e.target.value })}
-
                                         variant="outlined"
                                         label="First Name"
                                         type="text"

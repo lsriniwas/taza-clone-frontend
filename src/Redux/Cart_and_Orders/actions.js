@@ -94,7 +94,8 @@ const addOrder = (payload,orderItems) => async(dispatch) => {
                             alert("order placed successfully")
                             dispatch(addOrdersuccess(res.message));
                           })
-                          .catch(err=>dispatch(failureOrder(err)))
+                          .catch(err=>{
+                            dispatch(failureOrder(err))})
                   } 
                   catch (err) {
                     console.log(err);

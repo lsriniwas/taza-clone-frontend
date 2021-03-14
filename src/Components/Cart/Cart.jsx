@@ -1,4 +1,4 @@
-import { MenuItem, Select } from '@material-ui/core'
+// import { MenuItem, Select } from '@material-ui/core'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useHistory } from 'react-router-dom'
@@ -11,10 +11,10 @@ export const Cart = () => {
     const dispatch = useDispatch();
     const history =useHistory()
     const [login,setLogin]=useState(false);
-    const { isAuth, isLoading, profile } = useSelector(state => state.authReducer)
+    const { isAuth} = useSelector(state => state.authReducer)
     const items = useSelector(state => state.cartorderReducer.cart)
     const total = useSelector(state => state.cartorderReducer.totalAmt)
-    const [qty, setQty] = React.useState();
+    // const [qty, setQty] = React.useState();
 
     React.useEffect(() => {
         document.title = `User Cart |Taza Chocolate `

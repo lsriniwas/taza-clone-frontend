@@ -41,7 +41,7 @@ export const Profile = () => {
             id: profile._id
         }
         dispatch(requestUserOrder(payload))
-    }, [])
+    },[])
 
     const handleLogout = () => {
         dispatch(userLogout())
@@ -63,9 +63,9 @@ export const Profile = () => {
                                     <div>
                                         Date:{order.date}
                                         {
-                                            order.items?.map(item => {
+                                            order.items?.map((item,i) => {
                                                 return (
-                                                    <div className={styles.item}>
+                                                    <div className={styles.item} key={i}>
                                                         <div className={styles.item_checkout} >
                                                             <div className={styles.item_checkout_img}>
                                                                 <img src={item.img} alt="" />
@@ -127,8 +127,8 @@ export const Profile = () => {
                 >
                     <div>
                         {
-                            addresses?.map(address =>
-                                <Paper style={{ margin: 20 }}>
+                            addresses?.map((address,i) =>
+                                <Paper style={{ margin: 20 }} key={i}>
                                     <Accordion>
                                         <AccordionSummary
                                             expandIcon={<ExpandMoreIcon />}

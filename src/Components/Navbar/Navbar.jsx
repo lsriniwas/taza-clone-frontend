@@ -115,7 +115,7 @@ export const Navbar = () => {
                                     }
                                 </li>
 
-                                <li><NavLink to="#" title="Search" className={styles.searchIcon}></NavLink></li>
+                                <li><NavLink to="/search" title="Search" className={styles.searchIcon}></NavLink></li>
                                 <li><NavLink to="/cart">
                                     <Badge color="secondary" badgeContent={totalCartItems}>
                                         <div className={styles.cartIcon}>

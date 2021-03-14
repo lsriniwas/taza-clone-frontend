@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { fetchCollectionBars, getProductDetails } from '../Redux/Collections/actions'
+import { fetchCollectionBars } from '../Redux/Collections/actions'
 import { useDispatch, useSelector } from "react-redux";
 import styles from "../Styles/BarPage/BarPage.module.css"
 import "../Styles/BarPage/BarPage.module.css"

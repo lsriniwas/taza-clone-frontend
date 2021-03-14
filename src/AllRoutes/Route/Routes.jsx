@@ -18,7 +18,8 @@ import { Bark } from '../../Pages/Bark'
 import { Product } from '../../Pages/Product'
 import { PrivateRoute } from '../Private/PrivateRoute'
 import { Profile } from '../Private/Profile'
-
+import { Search } from '../../Components/Search/Search'
+    
 const Routes = () => {
     return (
         <div>
@@ -58,6 +59,12 @@ const Routes = () => {
                 <Route path="/collections/product" exact>
                     <Navbar />
                     <Product />
+                    <FreeShipping />
+                    <LearnMore />
+                </Route>
+                <Route path="/search" exact>
+                    <Navbar />
+                    <Search/>
                     <FreeShipping />
                     <LearnMore />
                 </Route>

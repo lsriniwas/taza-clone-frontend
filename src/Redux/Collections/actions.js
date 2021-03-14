@@ -21,7 +21,6 @@ payload
 
 export const fetchCollectionBars=(payload)=>(dispatch)=>{
     dispatch(fetchBars());
-  console.log(process.env.BASE_URL,process.env.REACT_APP_API_URL)
     var config = {
         method: 'get',
         url: `${process.env.REACT_APP_API_URL}/collections/amaze-bars`,
@@ -95,7 +94,6 @@ export const getProductDetails=(payload)=>(dispatch)=>{
          'Content-Type': 'application/json'
        },
      };
-     console.log(config)
      axios(config)
      .then(({data})=>dispatch(fetchSingleProduct(data)))
      .catch((err)=>dispatch(fetchBarsFailure(err)))
